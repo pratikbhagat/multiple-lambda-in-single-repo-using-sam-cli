@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Metadata:
+      BuildMethod: makefile
+    Properties:
+      CodeUri: .
+      Handler: hello
+      Runtime: go1.x
+      Role: arn:aws:iam::239183539717:role/whatsapp-broadcast-sentry
+      Architectures:
+        - x86_64
+  HelloWorldNew:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Metadata:
+      BuildMethod: makefile
+    Properties:
+      CodeUri: .
+      Handler: hello-new
+      Runtime: go1.x
+      Role: arn:aws:iam::239183539717:role/whatsapp-broadcast-sentry
+      Architectures:
+        - x86_64
